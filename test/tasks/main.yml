@@ -1,0 +1,19 @@
+---
+# tasks file for test
+
+- name: installing apache
+  ansible.builtin.apt:
+    name: apache2
+    state: present
+  # notify: Start apache
+
+- name: Enabling apache
+  ansible.builtin.service:
+    name: apache2
+    enabled: yes
+
+- name: write hostname using jinja2
+  ansible.builtin.template:
+    src: templates/index.html.j2
+    dest: /var/www/html/index.html
+  notify: restart apache

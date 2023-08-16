@@ -1,0 +1,15 @@
+--- 
+#start of playbook
+
+- hosts: localhost
+  roles:
+    - test
+
+# - import_playbook: love.yml
+
+
+
+  # tasks:
+  #   - name: Importing tasks
+  #     import_tasks:
+  #       file: apache/tasks/main.yml

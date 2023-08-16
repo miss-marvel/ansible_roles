@@ -1,0 +1,12 @@
+---
+# handlers file for test
+
+- name: Start apache
+  ansible.builtin.service:
+    name: apache2
+    state: started
+
+- name: restart apache
+  ansible.builtin.service:
+    name: apache2
+    state: restarted
